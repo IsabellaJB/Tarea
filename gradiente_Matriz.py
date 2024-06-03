@@ -119,9 +119,6 @@ gradiente = (primera_derivada(prueba,deltaX,funcion_objetivo))
 uno = (segunda_parte(prueba,deltaX,funcion_objetivo))
 dos = (tercera_parte(prueba,deltaX,funcion_objetivo))
 
-# print(uno)
-# print(dos)
-
 
 print("Gradiente: {}".format(gradiente))
 
