@@ -168,14 +168,10 @@ def tercera_parte(x, delta, funcion):
         
 
 def combina(lista1, lista2):
-    fin = []
-    fin2 = []
+    resultado = []
     for i in range(len(lista1)):
-        fin2.append(lista1[i])
-        fin2.append(lista2[i])
-    fin.append(fin2)
-
-    return fin
+        resultado.append([lista1[i], lista2[i]])
+    return resultado
 
 
 
