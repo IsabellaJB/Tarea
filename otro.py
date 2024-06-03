@@ -11,38 +11,10 @@ def funcion_objetivo(arreglo):
 prueba = [1,1]
 deltaX = 0.01
 
-# primera parte
-def primera_derivada(x, delta,funcion):
-    derivadas = []
-    for i in range (0, len(x)):
-        valor1 = 0
-        valor2 = 0
-        valor_final = 0
-        copia = x.copy()
-        copia[i] = x[i] + delta
 
-        # print(copia)
-
-        valor1 = funcion(copia)
-        # print(valor1)
-
-        copia[i] = x[i] - delta
-        valor2 = funcion(copia)
-        # print(valor2)
-
-        # delta_x = 2*delta
-        
-        valor_final = (valor1 - valor2) / (2*delta)
-        
-        derivadas.append(valor_final)
-        # print("\n"*2)
-    return derivadas
-
-
-
-def segunda_parte(x, delta, funcion):
+def combinacion(x, delta, funcion):
     derivadas2 = []
-    lista2 = []
+    lista8 = []
     for i in range (0, len(x)):
         valor1 = 0
         valor2 = 0
@@ -55,16 +27,10 @@ def segunda_parte(x, delta, funcion):
         valor2 = 2*(funcion(x))
         copia[i] = x[i] - delta
         valor3 = funcion(copia)
-
         valor_final = (valor1 - (valor2) + valor3) / (delta**2)
-        lista2.append(valor_final)
+        lista8.append(valor_final)
 
-    return lista2
-
-
-def tercera_parte(x, delta, funcion):
-    lista_final = []
-    for i in range(len(x)):
+        print(lista8)
         lista = []
         lista2 = []
         lista3 = []
@@ -101,32 +67,19 @@ def tercera_parte(x, delta, funcion):
             v4 = funcion(lista4)
 
         v_f = (v1 - (v2) - (v3) + v4) / (4*delta*delta)
-        lista_final.append(v_f)
-    return lista_final
-        
-
-        
-
-
+        lista8.append(v_f)
+        print(lista8)
+        print("\n")
+    # derivadas2.append(lista8)
+    return derivadas2
 
 
 
-        
 
 
 
-gradiente = (primera_derivada(prueba,deltaX,funcion_objetivo))
-uno = (segunda_parte(prueba,deltaX,funcion_objetivo))
-dos = (tercera_parte(prueba,deltaX,funcion_objetivo))
+print(combinacion(prueba, deltaX,funcion_objetivo))
 
-# print(uno)
-# print(dos)
-
-
-print("Gradiente: {}".format(gradiente))
-
-print("Diagonal principal: {}".format(uno))
-print("Diagonal inversa: {}".format(dos))
 
 
 
