@@ -8,8 +8,7 @@ def funcion_objetivo(arreglo):
     return operacion
 
 
-prueba = [1,1]
-deltaX = 0.01
+
 
 # primera parte
 def primera_derivada(x, delta,funcion):
@@ -111,7 +110,8 @@ def tercera_parte(x, delta, funcion):
 
 
 
-        
+prueba = [1,1]
+deltaX = 0.01        
 
 
 
@@ -125,19 +125,18 @@ print("Gradiente: {}".format(gradiente))
 print("Diagonal principal: {}".format(uno))
 print("Diagonal inversa: {}".format(dos))
 
-n = len(uno)
 
-matriz = [[0] * n for _ in range(n)]
 
-for i in range(n):
-    matriz[i][i] = uno[i]
-
-for i in range(n):
-    matriz[i][n - 1 - i] = dos[i]
-
+def hessiana(uno, dos):
+    n = len(uno)
+    matriz = [[0] * n for _ in range(n)]
+    for i in range(n):
+        matriz[i][i] = uno[i]
+    for i in range(n):
+        matriz[i][n - 1 - i] = dos[i]
+    return matriz
 
 
 print("Gradiente: {}".format(gradiente))
 print("Hessiana:")
-for fila in matriz:
-    print(fila)
+print(hessiana(uno,dos))
